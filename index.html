@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+	
+        <!-- Меню получает значение "active" в качестве класса. -->
+        
+        <!-- Чтобы предотвратить "прыжки" страницы при изменении ссылки, используем модификатор "prevent" (сокращение для preventDefault). -->
+    
+        <nav v-bind:class="active" v-on:click.prevent>
+    
+            <!-- Когда происходит нажатие на ссылку, вызываем метод makeActive, определенный как js-сущность Vue. -->
+    
+            <a href="#" class="home" v-on:click="makeActive('home')">Главная</a>
+            <a href="#" class="projects" v-on:click="makeActive('projects')">Проекты</a>
+            <a href="#" class="services" v-on:click="makeActive('services')">Услуги</a>
+            <a href="#" class="contact" v-on:click="makeActive('contact')">Контакты</a>
+        </nav>
+    
+         <!-- Шаблонное значение будет заменено на значение переменной "active". Все изменения будут автоматически отражены на странице. -->
+    
+        <p>Выбран класс <b>{{active}}</b></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="myscript.js"></script>
+</body>
+</html>
+
